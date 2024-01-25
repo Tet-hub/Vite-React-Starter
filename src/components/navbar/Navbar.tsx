@@ -25,9 +25,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar bg-base-100 fixed top-0 left-0 right-0 z-30">
+      {/* start */}
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -39,7 +40,7 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
+                d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </div>
@@ -48,20 +49,51 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Homepage</a>
+              <a>Item 1</a>
             </li>
             <li>
-              <a>Portfolio</a>
+              <a>Parent</a>
+              <ul className="p-2">
+                <li>
+                  <a>Submenu 1</a>
+                </li>
+                <li>
+                  <a>Submenu 2</a>
+                </li>
+              </ul>
             </li>
             <li>
-              <a>About</a>
+              <a>Item 3</a>
             </li>
           </ul>
         </div>
-      </div>
-      <div className="navbar-center">
         <a className="btn btn-ghost text-xl">Starter Template</a>
       </div>
+      {/* center */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <a>Item 1</a>
+          </li>
+          <li>
+            <details className="px-10">
+              <summary>Parent</summary>
+              <ul className="p-2">
+                <li>
+                  <a>Submenu 1</a>
+                </li>
+                <li>
+                  <a>Submenu 2</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a>Item 3</a>
+          </li>
+        </ul>
+      </div>
+      {/* end */}
       <div className="navbar-end">
         <label className="swap swap-rotate">
           {/* this hidden checkbox controls the state */}
